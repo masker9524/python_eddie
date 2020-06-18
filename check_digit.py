@@ -1,14 +1,20 @@
+def check_input(number):
+    if not number.isdigit():
+        print('Not a digit!')
+        return False
+    elif int(number) > 11 or int(number) < 0:
+        print('Out of range!!')
+        return False
+    else:
+        print('bye')
+        return True
+
+
 def main():
-    number = input('digit 1 ~ 10')
-    p = True
-    while p:
-        if not number.isdigit():
-            number = input('input again!!!')
-        elif int(number) > 11 or int(number) < 0:
-            number = input('input Again!!!')
-        else:
-            print('bye')
-            p = False
+    p = False
+    while not p:
+        number = input('digit 1 ~ 10')
+        p = check_input(number)
 
 
 if __name__ == '__main__':
